@@ -1,8 +1,6 @@
 #!/usr/bin/env php
 <?php
 
-// $ bin/console server:run --verbose --docroot=`pwd`/web // when using soft links
-
 use Doctrine\Common\Annotations\AnnotationRegistry;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArgvInput;
@@ -17,15 +15,11 @@ set_time_limit(0);
 
 if (php_sapi_name() == 'cli'): // TODO: Need for if?
     chdir(dirname($argv[0])) ; // supports symlinks
-    // chdir('../app') ; // TODO: is this needed and why?
     chdir('..') ; // TODO: is this needed and why? -- to find autoload, kernel.root_dir and config file
 endif;
 
 /** @var Composer\Autoload\ClassLoader $loader */
-// $loader = require '../vendor/autoload.php';
 $loader = require 'vendor/autoload.php';
-// $loader = require __DIR__.'/../app/autoload.php';
-// $loader = require 'autoload.php';
 AnnotationRegistry::registerLoader([$loader, 'loadClass']);
 
 $input = new ArgvInput();
@@ -37,7 +31,6 @@ if ($debug) {
 }
 
 $kernel = new AppKernel($env, $debug);
-// $kernel = new App\MicroKernel($env, $debug);
 $application = new Application($kernel);
 $application->addCommands($kernel->getCommands());
 // here the kernel is no more needed, it could be removed
