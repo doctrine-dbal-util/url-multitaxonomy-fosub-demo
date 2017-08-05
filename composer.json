@@ -1,5 +1,6 @@
 {
     "name": "doctrine-dbal-util/url-multitaxonomy-fosub-demo",
+    "description": "Demo URL Taxonomy Management with FOS User",
     "license": "ISC",
     "type": "project",
     "autoload": {
