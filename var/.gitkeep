@@ -1,0 +1,5 @@
+This var directory is needed by
+https://github.com/sensiolabs/SensioDistributionBundle/blob/master/Composer/ScriptHandler.php
+    protected static function useNewDirectoryStructure(array $options)
+to detect new directory structure
+and search for console file in bin directory instead of src.
