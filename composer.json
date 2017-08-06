@@ -23,7 +23,7 @@
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.6.30",
+        "php": ">=5.6.24",
         "dbal-util/cli-bundle": "0.1.x-dev@dev",
         "dbal-util/connection": "0.1.x-dev@dev",
         "dbal-util/connection-pagerfanta": "0.1.x-dev@dev",
