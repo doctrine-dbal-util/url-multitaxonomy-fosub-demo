@@ -65,7 +65,6 @@
     "require-dev": {
         "dama/doctrine-test-bundle"            : "^3.0",
         "friendsofphp/php-cs-fixer"            : "^2.0",
-        "phpunit/phpunit"                      : "^5.7",
         "sensio/generator-bundle"              : "^3.1",
         "symfony/phpunit-bridge"               : "^3.3"
     },
