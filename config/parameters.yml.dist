@@ -9,7 +9,7 @@ parameters:
     # mailer_transport:  smtp
     # mailer_host:       127.0.0.1
     # mailer_user:       ~
-    mailer_user:       nobody@example.org
+    mailer_user:       ~
     # mailer_password:   ~
 
     # locale:            en
