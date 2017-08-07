@@ -21,7 +21,7 @@ matrix:
 
 before_install:
   - phpenv config-rm xdebug.ini
-  - composer self-update # not needed
+  - composer self-update # May help using cache for php packages.
   - ls /home/travis/.phpenv/versions/5.6/etc/conf.d
   - phpenv config-add ~travis.php.ini # name choosen for it to be executed after travis.ini
   - ls /home/travis/.phpenv/versions/5.6/etc/conf.d
