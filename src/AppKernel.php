@@ -4,7 +4,7 @@ use DbalUtil\Connection\ConnectionTrait;
 use DbalUtil\Connection\QueryTrait;
 use DbalUtil\Connection\Pagerfanta\PagedQueryTrait;
 use DbalUtil\Connection\Ramsey\Uuid;
-use DbalUtil\DbalContrib\Event\Listeners\SqliteSessionInit;
+use DoctrineDbalUtil\DbalContrib\Event\Listeners\SqliteSessionInit;
 use DoctrineDbalUtil\UrlMultiTaxonomy\Schema\SchemaBuilder as  UrlSchemaBuilder;
 use PhpTaxonomy\MultiTaxonomy\Doctrine\DBAL\SchemaBuilder as MultiTaxonomySchemaBuilder;
 use SensioLabs\Security\Command\SecurityCheckerCommand;
