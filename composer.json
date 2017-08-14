@@ -1,8 +1,11 @@
 {
     "name": "doctrine-dbal-util/url-multitaxonomy-fosub-demo",
+    "type": "project",
     "description": "Demo URL Taxonomy Management with FOS User",
     "license": "ISC",
-    "type": "project",
+    "authors": [
+        {"name": "Jean-Bernard Addor"}
+    ],
     "autoload": {
         "psr-4": {
             "": "src/"
@@ -24,11 +27,11 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.6.24",
-        "dbal-util/cli-bundle": "0.1.x-dev@dev",
-        "dbal-util/connection": "0.1.x-dev@dev",
+        "doctrine-dbal-util/cli-bundle": "0.1.x-dev@dev",
+        "doctrine-dbal-util/connection": "0.1.x-dev@dev",
         "doctrine-dbal-util/connection-pagerfanta": "0.1.x-dev@dev",
-        "dbal-util/connection-ramsey-uuid": "0.1.x-dev@dev",
-        "dbal-util/dbal-contrib": "2.5.12.x-dev@dev",
+        "doctrine-dbal-util/connection-ramsey-uuid": "0.1.x-dev@dev",
+        "doctrine-dbal-util/dbal-contrib": "2.5.12.x-dev@dev",
         "doctrine-dbal-util/url-multitaxonomy-pager-controller": "^0.1.0@dev",
         "doctrine-dbal-util/url-multitaxonomy-pagerfanta-twig": "^0.1.0@dev",
         "doctrine-dbal-util/url-multitaxonomy-schema": "^0.1.0@dev",
