@@ -36,7 +36,7 @@
         "doctrine-dbal-util/url-multitaxonomy-pagerfanta-twig": "^0.1.0@dev",
         "doctrine-dbal-util/url-multitaxonomy-schema": "^0.1.0@dev",
         "doctrine/doctrine-bundle": "^1.6",
-        "fos-user-util/dbal-util-crud-bundle": "^0.1.0@dev",
+        "fos-user-util/doctrine-dbal-util-crud-bundle": "^0.1.0@dev",
         "fos-user-util/user-util": "^2.0@dev",
         "friendsofsymfony/user-bundle": "^2.0",
         "incenteev/composer-parameter-handler": "^2.1",
