@@ -92,7 +92,7 @@ class AppKernel extends Kernel
             new DoctrineBundle(),
             new \WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
             new DoctrineDbalUtil\CliBundle\DbalUtilCliBundle(),
-            new FosUserUtil\DbalUtilCrudBundle\FosUserUtilDbalUtilCrudBundle(),
+            new FosUserUtil\DoctrineDbalUtilCrudBundle\FosUserUtilDbalUtilCrudBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)):
