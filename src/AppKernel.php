@@ -129,7 +129,7 @@ class AppKernel extends Kernel
         // $loader->load($this->getProjectDir().'/config/config_'.$this->getEnvironment().'.yml');
 
         //Controllers
-        $c->autowire(\PhpTaxonomy\MultiTaxonomy\DbalUtil\Pagerfanta\Twig\Controller\MultiTaxonomyController::class)
+        $c->autowire(\PhpTaxonomy\MultiTaxonomy\DoctrineDbalUtil\Pagerfanta\Twig\Controller\MultiTaxonomyController::class)
             ->setAutoconfigured(true)
             ->addTag('controller.service_arguments')
             ->setPublic(false);
