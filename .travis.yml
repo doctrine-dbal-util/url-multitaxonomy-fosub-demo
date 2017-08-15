@@ -48,12 +48,12 @@ install:
   - ./bin/console
   - ./bin/console dbal:list-databases
   # - ./bin/console doctrine:schema:update ############################### Does it still rely on ORM for schema?
-  - ./bin/console dbal:schema:update
-  - ./bin/console dbal:schema:getMigrateToSql
 
 before_script:
 
 script:
+  - ./bin/console dbal:schema:update
+  - ./bin/console dbal:schema:getMigrateToSql
   # this checks that the source code follows the Symfony Code Syntax rules
   - if [[ $TRAVIS_PHP_VERSION = '7.1' ]]; then ./vendor/bin/php-cs-fixer fix --stop-on-violation --diff --dry-run -vvv --using-cache=no; fi
   # this checks that the YAML config files contain no syntax errors
