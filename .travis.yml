@@ -44,6 +44,11 @@ install:
   - cp config/parameters.yml.travis config/parameters.yml
   - composer up --no-progress --no-suggest --optimize-autoloader --apcu-autoloader
   - composer show
+  - chmod u+x ./bin/console
+  - ./bin/console
+  - ./bin/console dbal:list-databases
+  - ./bin/console doctrine:schema:update ############################### Does it still rely on ORM for schema?
+  - ./bin/console dbal:schema:update
 
 before_script:
 
@@ -51,8 +56,6 @@ script:
   # this checks that the source code follows the Symfony Code Syntax rules
   - if [[ $TRAVIS_PHP_VERSION = '7.1' ]]; then ./vendor/bin/php-cs-fixer fix --stop-on-violation --diff --dry-run -vvv --using-cache=no; fi
   # this checks that the YAML config files contain no syntax errors
-  - chmod u+x ./bin/console
-  - ./bin/console
   - ./bin/console lint:yaml config
   # - ./bin/console lint:yaml @CodeExplorerBundle
   # this checks that the Twig template files contain no syntax errors
@@ -61,8 +64,6 @@ script:
   # this checks that the XLIFF translations contain no syntax errors
   - ./bin/console lint:xliff templates
   # this checks that the application doesn't use dependencies with known security vulnerabilities
-  - ./bin/console dbal:list-databases
-  - ./bin/console dbal:schema:update
   - ./vendor/bin/simple-phpunit
   - ./vendor/bin/simple-phpunit tests
   - ./bin/console security:check --end-point=http://security.sensiolabs.org/check_lock
