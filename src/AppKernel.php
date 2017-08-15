@@ -91,7 +91,7 @@ class AppKernel extends Kernel
             new SensioFrameworkExtraBundle(),
             new DoctrineBundle(),
             new \WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
-            new DbalUtil\CliBundle\DbalUtilCliBundle(),
+            new DoctrineDbalUtil\CliBundle\DbalUtilCliBundle(),
             new FosUserUtil\DbalUtilCrudBundle\FosUserUtilDbalUtilCrudBundle(),
         ];
 
