@@ -54,6 +54,8 @@ before_script:
 script:
   - ./bin/console dbal:schema:update
   - ./bin/console dbal:schema:getMigrateToSql
+  - ./bin/console fos:user:create --super-admin admin admin@example.org admin
+  - ./bin/console fos:user:create user user@example.org user
   # this checks that the source code follows the Symfony Code Syntax rules
   - if [[ $TRAVIS_PHP_VERSION = '7.1' ]]; then ./vendor/bin/php-cs-fixer fix --stop-on-violation --diff --dry-run -vvv --using-cache=no; fi
   # this checks that the YAML config files contain no syntax errors
