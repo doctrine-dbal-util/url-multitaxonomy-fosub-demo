@@ -6,6 +6,7 @@ use DoctrineDbalUtil\Connection\Pagerfanta\PagedQueryTrait;
 use DoctrineDbalUtil\Connection\Ramsey\Uuid;
 use DoctrineDbalUtil\DbalContrib\Event\Listeners\SqliteSessionInit;
 use DoctrineDbalUtil\UrlMultiTaxonomy\Schema\SchemaBuilder as  UrlSchemaBuilder;
+use FosUserUtil\Doctrine\DBAL\SchemaBuilder as  UserSchemaBuilder;
 use PhpTaxonomy\MultiTaxonomy\Doctrine\DBAL\SchemaBuilder as MultiTaxonomySchemaBuilder;
 use SensioLabs\Security\Command\SecurityCheckerCommand;
 use SensioLabs\Security\SecurityChecker;
@@ -49,6 +50,7 @@ class AppKernel extends Kernel
         
         $UserTableName = 'http_user';
         // TODO UserSchemaBuilder !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        $UserTable = (new UserSchemaBuilder($schema))->UserTable();
 
         $U = new UrlSchemaBuilder($schema);
         $UrlTable = $U->UrlTable();
