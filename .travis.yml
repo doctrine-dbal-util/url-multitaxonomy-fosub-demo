@@ -54,6 +54,7 @@ before_script:
 script:
   - ./bin/console dbal:schema:update
   - ./bin/console dbal:schema:getMigrateToSql
+  - psql --dbname=travis_ci_test --command='\d http_user'
   - ./bin/console fos:user:create --super-admin admin admin@example.org admin
   - ./bin/console fos:user:create user user@example.org user
   # this checks that the source code follows the Symfony Code Syntax rules
