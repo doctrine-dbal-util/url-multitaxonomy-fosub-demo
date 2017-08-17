@@ -119,7 +119,7 @@ class AppKernel extends Kernel
         $routes->add('/', SymfonyUtil\Controller\EngineAsArgumentController::class, 'index');
         $routes->import('@FOSUserBundle/Resources/config/routing/all.xml');
         $routes->import('@FosUserUtilDbalUtilCrudBundle/Controller/', '/', 'annotation');
-        $routes->import($this->getProjectDir().'/vendor/php-taxonomy/multitaxonomy-dbal-util-pagerfanta-twig-controller/default.yml', '/taxonomy', 'yaml');
+        $routes->import($this->getProjectDir().'/vendor/php-taxonomy/multitaxonomy-doctrine-dbal-util-pagerfanta-twig-controller/default.yml', '/taxonomy', 'yaml');
         $routes->import($this->getProjectDir().'/vendor/doctrine-dbal-util/url-multitaxonomy-pager-controller/Controller/UrlController.php', '', 'annotation');
         // https://symfony.com/doc/current/routing.html#controller-string-syntax
     }
