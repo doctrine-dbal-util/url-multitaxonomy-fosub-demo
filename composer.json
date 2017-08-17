@@ -8,7 +8,6 @@
     ],
     "autoload": {
         "psr-4": {
-            "": "src/"
         },
         "classmap": [
         ],
@@ -31,7 +30,7 @@
         "doctrine-dbal-util/connection": "0.1.x-dev@dev",
         "doctrine-dbal-util/connection-pagerfanta": "0.1.x-dev@dev",
         "doctrine-dbal-util/connection-ramsey-uuid": "0.1.x-dev@dev",
-        "doctrine-dbal-util/dbal-contrib": "2.5.12.x-dev@dev",
+        "doctrine-dbal-util/dbal-contrib": "^2.5.12-dev@dev",
         "doctrine-dbal-util/url-multitaxonomy-pager-controller": "^0.1.0@dev",
         "doctrine-dbal-util/url-multitaxonomy-pagerfanta-twig": "^0.1.0@dev",
         "doctrine-dbal-util/url-multitaxonomy-schema": "^0.1.0@dev",
