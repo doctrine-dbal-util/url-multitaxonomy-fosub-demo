@@ -10,6 +10,7 @@
         "psr-4": {
         },
         "classmap": [
+            "src/"
         ],
         "files": [
         ]
