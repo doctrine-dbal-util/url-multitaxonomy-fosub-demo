@@ -50,7 +50,7 @@ class AppKernel extends Kernel
         
         $UserTableName = 'http_user';
         // TODO UserSchemaBuilder !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        $UserTable = (new UserSchemaBuilder($schema))->UserTable();
+        $UserTable = (new UserSchemaBuilder($schema))->userTable();
 
         $U = new UrlSchemaBuilder($schema);
         $UrlTable = $U->UrlTable();
