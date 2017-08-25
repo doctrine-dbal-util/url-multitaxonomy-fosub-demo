@@ -48,19 +48,18 @@ class AppKernel extends Kernel
     public function getDbalSchema() {
         $schema = new \Doctrine\DBAL\Schema\Schema();
         
-        $UserTableName = 'http_user';
-        // TODO UserSchemaBuilder !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // $UserTableName = 'http_user';
         $UserTable = (new UserSchemaBuilder($schema))->userTable();
 
         $U = new UrlSchemaBuilder($schema);
         $UrlTable = $U->UrlTable();
         $OwnedUrlTable = $U->OwnedUrlTable($UrlTable);
-        $LinkUrlUser = $U->LinkUrlUser($OwnedUrlTable, $UserTableName);
+        $LinkUrlUser = $U->LinkUrlUser($OwnedUrlTable, $UserTable);
         
         $T = new MultiTaxonomySchemaBuilder($schema);
         $TaxoTable = $T->TaxoTable();
         $LinkTaxoTaxo = $T->LinkTaxoTaxo($TaxoTable);
-        $LinkTaxonomyUser = $T->LinkTaxonomyUser($LinkTaxoTaxo, $UserTableName);
+        $LinkTaxonomyUser = $T->LinkTaxonomyUser($LinkTaxoTaxo, $UserTable);
         $LinkUrlTaxo = $T->LinkUrlTaxo($OwnedUrlTable, $TaxoTable);
 
         return $schema;
