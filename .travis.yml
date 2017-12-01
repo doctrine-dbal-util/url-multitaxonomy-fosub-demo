@@ -30,6 +30,7 @@ before_install:
   - ls /home/travis/.phpenv/versions/5.6/etc/conf.d
   - phpenv config-add ~travis.php.ini # name choosen for it to be executed after travis.ini
   - ls /home/travis/.phpenv/versions/5.6/etc/conf.d
+  - ls /home/travis/.phpenv/versions/5.6/etc/conf.d | xargs cat
   # Shows the (alphabetical) order used for execution, last executed overrides the parameters
   - psql -c 'create database travis_ci_test;' -U postgres
   - psql --dbname=postgres --command='\l'
@@ -41,7 +42,7 @@ before_install:
 install:
   - composer validate
   - if [[ $TRAVIS_PHP_VERSION = '7.1' ]]; then composer require --dev friendsofphp/php-cs-fixer; fi
-  - php -d memory_limit=-1 `which composer` install --no-scripts --no-progress --no-suggest
+  - which composer install --no-scripts --no-progress --no-suggest
   - cp config/parameters.yml.travis config/parameters.yml
   - composer up --no-progress --no-suggest --optimize-autoloader --apcu-autoloader
   - composer show
