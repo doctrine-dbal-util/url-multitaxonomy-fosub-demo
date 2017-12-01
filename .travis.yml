@@ -29,8 +29,8 @@ before_install:
   - which composer
   - ls /home/travis/.phpenv/versions/5.6/etc/conf.d
   - phpenv config-add ~travis.php.ini # name choosen for it to be executed after travis.ini
-  - ls /home/travis/.phpenv/versions/5.6/etc/conf.d
-  - ls /home/travis/.phpenv/versions/5.6/etc/conf.d | xargs cat
+  - ls -l --color /home/travis/.phpenv/versions/5.6/etc/conf.d
+  - pushd /home/travis/.phpenv/versions/5.6/etc/conf.d ; ls | xargs cat ; popd
   # Shows the (alphabetical) order used for execution, last executed overrides the parameters
   - psql -c 'create database travis_ci_test;' -U postgres
   - psql --dbname=postgres --command='\l'
