@@ -32,6 +32,7 @@ before_install:
   - ls -l --color /home/travis/.phpenv/versions/5.6/etc/conf.d
   - pushd /home/travis/.phpenv/versions/5.6/etc/conf.d ; ls | xargs cat ; popd
   # Shows the (alphabetical) order used for execution, last executed overrides the parameters
+  - php -r "echo ini_get('memory_limit').PHP_EOL;"
   - psql -c 'create database travis_ci_test;' -U postgres
   - psql --dbname=postgres --command='\l'
   - psql --dbname=travis_ci_test --command='\d'
