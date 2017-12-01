@@ -26,6 +26,7 @@ before_install:
   - if [ -f /home/travis/.phpenv/versions/$TRAVIS_PHP_VERSION/etc/conf.d/xdebug.ini ]; then phpenv config-rm xdebug.ini; fi
   - for f in $(find . -path './vendor' -prune -o -name \*.php -print) ; do php -l $f ; done # Do this first!
   - composer self-update # May help using cache for php packages.
+  - which composer
   - ls /home/travis/.phpenv/versions/5.6/etc/conf.d
   - phpenv config-add ~travis.php.ini # name choosen for it to be executed after travis.ini
   - ls /home/travis/.phpenv/versions/5.6/etc/conf.d
