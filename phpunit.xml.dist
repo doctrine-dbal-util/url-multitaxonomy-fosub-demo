@@ -20,6 +20,7 @@
         <env name="REDIS_HOST" value="localhost" />
         <env name="MEMCACHED_HOST" value="localhost" />
         <server name="KERNEL_DIR" value="src" />
+        <server name="KERNEL_CLASS" value="AppKernel" />
     </php>
 
     <testsuites>
