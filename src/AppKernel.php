@@ -156,7 +156,8 @@ class AppKernel extends Kernel
         // TODO: bad name, change for something more general! (service and class) (query object?)
         // 8x: Autowiring services based on the types they implement is deprecated since Symfony 3.3 and won't be supported in version 4.0. You should rename (or alias) the "raphia_model" service to "RaphiaDBAL" instead.
         // 8x in ApplicationAvailabilityFunctionalTest::testPageIsSuccessful from Tests
-        $c->register(RaphiaDBAL::class) // was commented out
+        // $c->register(RaphiaDBAL::class) // was commented out
+        $c->autowire(RaphiaDBAL::class)
             ->addArgument(new Reference('doctrine.dbal.default_connection'))
         ;
 
