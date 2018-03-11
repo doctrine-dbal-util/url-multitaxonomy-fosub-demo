@@ -49,6 +49,7 @@ install:
   - php -r "echo ini_get('memory_limit').PHP_EOL;" # https://getcomposer.org/doc/articles/troubleshooting.md#memory-limit-errors
   # - php -d memory_limit=-1 $(command -v composer) install --no-progress --no-suggest --optimize-autoloader --apcu-autoloader # useless
   - composer install --no-progress --no-suggest --optimize-autoloader --apcu-autoloader
+  - ls vendor/autoload.php
   - composer show --outdated
   - chmod u+x ./bin/console
   - ./bin/console
