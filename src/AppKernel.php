@@ -159,7 +159,7 @@ class AppKernel extends Kernel
         // https://symfony.com/doc/current/service_container/autowiring.html#working-with-interfaces
         // $c->register(RaphiaDBAL::class) // was commented out
         // $c->autowire(RaphiaDBAL::class)
-        $c->autowire(RaphiaDBAL)
+        $c->autowire('RaphiaDBAL')
             ->addArgument(new Reference('doctrine.dbal.default_connection'))
         ;
 
