@@ -158,7 +158,8 @@ class AppKernel extends Kernel
         // 8x in ApplicationAvailabilityFunctionalTest::testPageIsSuccessful from Tests
         // https://symfony.com/doc/current/service_container/autowiring.html#working-with-interfaces
         // $c->register(RaphiaDBAL::class) // was commented out
-        $c->autowire(RaphiaDBAL::class)
+        // $c->autowire(RaphiaDBAL::class)
+        $c->autowire(RaphiaDBAL)
             ->addArgument(new Reference('doctrine.dbal.default_connection'))
         ;
 
