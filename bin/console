@@ -18,6 +18,7 @@ if (php_sapi_name() == 'cli'): // TODO: Need for if?
     chdir('..') ; // TODO: is this needed and why? -- to find autoload, kernel.root_dir and config file
 endif;
 echo getcwd().PHP_EOL;
+
 $d = dir(getcwd());
 echo "Pointeur : " . $d->handle . "\n";
 echo "Chemin : " . $d->path . "\n";
@@ -25,6 +26,7 @@ while (false !== ($entry = $d->read())) {
    echo $entry."\n";
 }
 $d->close();
+
 $d = dir(getcwd()."/vendor");
 echo "Pointeur : " . $d->handle . "\n";
 echo "Chemin : " . $d->path . "\n";
@@ -32,13 +34,7 @@ while (false !== ($entry = $d->read())) {
    echo $entry."\n";
 }
 $d->close();
-$d = dir(getcwd()."/vendor/autoload.php");
-echo "Pointeur : " . $d->handle . "\n";
-echo "Chemin : " . $d->path . "\n";
-while (false !== ($entry = $d->read())) {
-   echo $entry."\n";
-}
-$d->close();
+
 
 /** @var Composer\Autoload\ClassLoader $loader */
 $loader = require 'vendor/autoload.php';
