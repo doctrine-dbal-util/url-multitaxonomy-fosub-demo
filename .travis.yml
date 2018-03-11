@@ -20,7 +20,7 @@ matrix:
     - php: 7.0
     # - php: 7.1
     - php: 7.2
-    # - php: nightly
+    - php: nightly
 
 before_install:
   - if [ -f /home/travis/.phpenv/versions/$TRAVIS_PHP_VERSION/etc/conf.d/xdebug.ini ]; then phpenv config-rm xdebug.ini; fi
@@ -47,7 +47,7 @@ install:
   # - composer install --no-scripts --no-progress --no-suggest
   # - composer up --no-progress --no-suggest --optimize-autoloader --apcu-autoloader
   - composer install --no-progress --no-suggest --optimize-autoloader --apcu-autoloader
-  - composer show --latest
+  - composer show --outdated
   - chmod u+x ./bin/console
   - ./bin/console
   - ./bin/console dbal:list-databases
