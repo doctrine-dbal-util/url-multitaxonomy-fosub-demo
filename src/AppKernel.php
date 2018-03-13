@@ -33,6 +33,17 @@ class RaphiaDBAL {
     use ConnectionTrait, QueryTrait, Uuid\QueryTrait, PagedQueryTrait {
     }
 }
+// DoctrineDbalUtil\Connection\ConnectionTrait
+//   https://github.com/doctrine-dbal-util/connection/blob/master/ConnectionTrait.php
+// DoctrineDbalUtil\Connection\QueryTrait
+//   https://github.com/doctrine-dbal-util/connection/blob/master/QueryTrait.php
+// DoctrineDbalUtil\Connection\Ramsey\Uuid
+//   https://github.com/doctrine-dbal-util/connection-ramsey-uuid/blob/master/QueryTrait.php
+//   ramsey/uuid
+// DoctrineDbalUtil\Connection\Pagerfanta\PagedQueryTrait
+//   https://github.com/doctrine-dbal-util/connection-pagerfanta/blob/master/PagedQueryTrait.php
+//   pagerfanta/pagerfanta
+//   pagerfanta-adapters/doctrine-dbal
 
 
 class AppKernel extends Kernel
