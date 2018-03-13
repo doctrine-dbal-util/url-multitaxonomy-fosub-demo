@@ -173,6 +173,7 @@ class AppKernel extends Kernel
         // $c->autowire('RaphiaDBAL')
             ->addArgument(new Reference('doctrine.dbal.default_connection'))
         ;
+        $c->setAlias(RaphiaDBAL::class, 'raphia_model');
 
         // Extensions
         $c->loadFromExtension('framework', [
