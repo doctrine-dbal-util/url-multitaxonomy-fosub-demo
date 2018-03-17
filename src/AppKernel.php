@@ -199,7 +199,7 @@ class AppKernel extends Kernel
             'debug' => true,
             'paths' => [
                 '%kernel.project_dir%/templates',
-                '%kernel.project_dir%/vendor/php-taxonomy/multitaxonomy-doctrine-dbal-util-pagerfanta-twig-templates' => 'MultiTaxonomyDbalUtilBundle',
+                '%kernel.project_dir%/vendor/php-taxonomy/multitaxonomy-pagerfanta-twig-templates' => 'MultiTaxonomyDbalUtilBundle',
                 '%kernel.project_dir%/vendor/doctrine-dbal-util/url-multitaxonomy-pagerfanta-twig' => 'UrlMultiTaxonomyPagerfanta',
             ],
         ]); // Sets the template directories...
