@@ -44,7 +44,7 @@
         "monolog/monolog": "^1.22",
         "php-di/invoker": "^2.0",
         "php-taxonomy/multitaxonomy-doctrine-dbal-util-pagerfanta-twig-controller": "^0.1.0@dev",
-        "php-taxonomy/multitaxonomy-doctrine-dbal-util-pagerfanta-twig-templates": "^0.1.0@dev",
+        "php-taxonomy/multitaxonomy-pagerfanta-twig-templates": "^0.1.0@dev",
         "php-taxonomy/multitaxonomy-doctrine-dbal-schema": "^0.1.0@dev",
         "ramsey/uuid": "^3.6",
         "ramsey/uuid-doctrine": "^1.3",
