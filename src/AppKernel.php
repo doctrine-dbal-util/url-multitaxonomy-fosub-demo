@@ -233,6 +233,7 @@ class AppKernel extends Kernel
                     ],
                     'logout'           => true,
                     'anonymous'        => true,
+                    'logout_on_user_change'        => true,
                 ],
             ],
             'access_control' => [
