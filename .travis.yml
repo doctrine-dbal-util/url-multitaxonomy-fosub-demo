@@ -5,9 +5,9 @@ php:
 - 7.2
 # - 7.1
 - 7.0
-- 5.6
+# - 5.6
 # - 5.5
-- 5.4
+# - 5.4
 
 cache:
   directories:
@@ -22,12 +22,23 @@ services:
 matrix:
   fast_finish: true
   include:
+  - php: 5.6
+    addons:
+      apt:
+        packages:
+        - zram-config
+  - php: 5.4
+    addons:
+      apt:
+        packages:
+        - zram-config
 
 before_install:
   - swapon --all
   - swapon --summary
   - cat /proc/swaps
   - free -h
+  - apt-cache policy zram-config
   - if [ -f /home/travis/.phpenv/versions/$TRAVIS_PHP_VERSION/etc/conf.d/xdebug.ini ]; then phpenv config-rm xdebug.ini; fi
   - for f in $(find . -path './vendor' -prune -o -name \*.php -print) ; do php -l $f ; done # Do this first!
   - composer self-update # May help using cache for php packages.
