@@ -23,17 +23,16 @@ matrix:
   fast_finish: true
   include:
   - php: 5.6
-    addons:
-      apt:
-        packages:
-        - upstart
-        - zram-config
+    sudo: true
   - php: 5.4
-    addons:
-      apt:
-        packages:
-        - upstart
-        - zram-config
+    sudo: true
+
+# - php: 5.6
+#     addons:
+#       apt:
+#         packages:
+#         - upstart # upstart is already the newest version (1.12.1-0ubuntu4.2).
+#         - zram-config # Error on 14.04 Trusty: runlevel:/var/run/utmp: No such file or directory
 
 before_install:
   - swapon --all
