@@ -35,7 +35,10 @@ matrix:
 #         - zram-config # Error on 14.04 Trusty: runlevel:/var/run/utmp: No such file or directory
 
 before_install:
+  - cat ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   - echo "memory_limit = -1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - cat ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - php -r "echo ini_get('memory_limit').PHP_EOL;"
   - swapon --all
   - swapon --summary
   - cat /proc/swaps
@@ -46,7 +49,7 @@ before_install:
   - composer self-update # May help using cache for php packages.
   - which composer
   - ls /home/travis/.phpenv/versions/5.6/etc/conf.d
-  - phpenv config-add ~travis.php.ini # name choosen for it to be executed after travis.ini
+  # - phpenv config-add ~travis.php.ini # name choosen for it to be executed after travis.ini
   - ls -l --color /home/travis/.phpenv/versions/5.6/etc/conf.d
   - pushd /home/travis/.phpenv/versions/5.6/etc/conf.d ; ls | xargs cat ; popd
   # Shows the (alphabetical) order used for execution, last executed overrides the parameters
