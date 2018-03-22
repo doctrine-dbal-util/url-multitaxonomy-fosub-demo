@@ -37,6 +37,8 @@ matrix:
 #         - zram-config # Error on 14.04 Trusty: runlevel:/var/run/utmp: No such file or directory
 
 before_install:
+  - ls --color ~/.phpenv/versions/$(phpenv version-name)
+  - ls --color ~/.phpenv/versions/$(phpenv version-name)/bin
   - cat ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   - echo "memory_limit = -1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   - cat ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
