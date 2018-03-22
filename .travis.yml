@@ -50,6 +50,7 @@ before_install:
   - for f in $(find . -path './vendor' -prune -o -name \*.php -print) ; do php -l $f ; done # Do this first!
   - composer self-update # May help using cache for php packages.
   - which composer
+  - composer global require --no-dev composer/composer
   - ls /home/travis/.phpenv/versions/5.6/etc/conf.d
   # - phpenv config-add ~travis.php.ini # name choosen for it to be executed after travis.ini
   - ls -l --color /home/travis/.phpenv/versions/5.6/etc/conf.d
@@ -72,7 +73,7 @@ install:
   - php -r "echo ini_get('memory_limit').PHP_EOL;" # https://getcomposer.org/doc/articles/troubleshooting.md#memory-limit-errors
   # - php -d memory_limit=-1 $(command -v composer) install --no-progress --no-suggest --optimize-autoloader --apcu-autoloader # useless
   # - command time composer install --profile --no-dev # split in 2 to try to spare memory
-  - command time composer install --profile
+  - command time ~/vendor/bin/composer install --profile
   # --no-suggest # To spare memory?
   # --no-progress --no-suggest --optimize-autoloader --apcu-autoloader
   - ls vendor/autoload.php
