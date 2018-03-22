@@ -50,7 +50,7 @@ before_install:
   - for f in $(find . -path './vendor' -prune -o -name \*.php -print) ; do php -l $f ; done # Do this first!
   - composer self-update # May help using cache for php packages.
   - which composer
-  - composer global require --no-dev composer/composer
+  - composer global require --update-no-dev composer/composer
   - ls /home/travis/.phpenv/versions/5.6/etc/conf.d
   # - phpenv config-add ~travis.php.ini # name choosen for it to be executed after travis.ini
   - ls -l --color /home/travis/.phpenv/versions/5.6/etc/conf.d
