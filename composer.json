@@ -54,7 +54,7 @@
         "symfony-util/controller-using-templating-http-foundation-http-kernel": "^0.1@dev",
         "symfony/asset": "^2.3 || ^3.4",
         "symfony/form": "^2.3 || ^3.4",
-        "symfony/lts": "^2.3 || ^3.4",
+        "symfony/lts": "^2 || ^3",
         "symfony/monolog-bridge": "^2.3 || ^3.4",
         "symfony/process": "^2.3 || ^3.4",
         "symfony/symfony": "^2.3 || ^3.4",
