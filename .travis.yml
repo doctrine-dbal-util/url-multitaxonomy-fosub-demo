@@ -88,6 +88,10 @@ install:
   # --no-suggest # To spare memory?
   # --no-progress --no-suggest --optimize-autoloader --apcu-autoloader
   - ls vendor/autoload.php
+  - composer why pagerfanta/pagerfanta
+  - composer why paragonie/random_compat
+  - composer why php-cs-fixer/diff
+  - composer why symfony/lts
   - composer show --outdated
   - chmod u+x ./bin/console
   - ./bin/console
