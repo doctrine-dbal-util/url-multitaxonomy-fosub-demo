@@ -195,6 +195,9 @@ class AppKernel extends Kernel
                 'engines' => 'twig',
             ],
         ]);
+        $c->loadFromExtension('sensio_framework_extra', [
+            'router'      => ['annotations' => false], # https://github.com/symfony/demo/issues/786
+        ]);
         $c->loadFromExtension('twig', [
             'debug' => true,
             'paths' => [
